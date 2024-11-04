@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% load crispy_forms_tags %}
+        <div >
+            <h5 class="text-center">Registration Form</h5>
+            <form action="{% url 'sign_up' %}"  method="POST" class="w-50 py-3 px-5 m-auto my-3 border-5 border-primary border-top rounded-3 shadow d-flex flex-column" novalidate>
+                
+                {% csrf_token %}
+                
+               {{form|crispy}} 
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Submit
+                </button>
+                
+            </form>
+        </div>
+    </div>
+  </div>
+{% endblock content %}
+    
